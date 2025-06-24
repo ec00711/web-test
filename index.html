@@ -1,1 +1,75 @@
-<h1>Testing! blah blah blah</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="vdiewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/script.js"></script>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    h2 {
+      color: #6297e7;
+      text-align: center;
+    }
+
+    p {
+      color: #666;
+      text-align: center;
+    }
+
+    /* # to target specific ID attributes */
+    #showButton {
+      display: block; /*takes up full width available*/
+      min-width: 120px;
+      height: 40px;
+      margin: 20px auto;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    /* . to target classes */
+    .myClass {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .hidden {
+      display:none;
+    }
+
+   
+  </style>
+</head>
+<body>
+
+    <h1>Hello!</h1>
+    <h2>(hello)</h2>
+    <p>etc etc etc</p>
+
+    <div class="myClass">
+        <button id="showButton" onclick="buttonClick()">Press me!</button>
+        <p id="hiddenText" class="hidden">Oh no I've been pressed!</p>
+    </div>
+</body>
+</html>
