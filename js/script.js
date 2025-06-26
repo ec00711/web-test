@@ -1,29 +1,28 @@
-// Option 1: use function name in the HTML
-// I think I like this better
-function buttonClick()
-{
-    document.getElementById("showButton").innerHTML = "this has been clicked before";
-}
+// Set the date we're counting down to
+var countDownDate = new Date("July 1, 2025 19:57:00").getTime();
 
-/*
- const for constants
-let for local variables
-var for global variables - needed here because we're 
-    editing the items that exist in the html
-*/
-var showButton = document.getElementById("showButton");
-var hiddenText = document.getElementById("hiddenText");
+// Update the count down every 1 second
+var myInterval = setInterval(function() {
 
-// Option 2: Access HTML element and add an event listener to it
-// This seems messier - less separation
-showButton.addEventListener('click', function()
-{
-    if(hiddenText.classList.contains("hidden"))
-    {
-        hiddenText.classList.remove("hidden");
-    }
-    else
-    {
-        hiddenText.classList.add("hidden");
-    }
-})
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("clock").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(myInterval);
+    document.getElementById("clock").innerHTML = "TIME UP";
+  }
+}, 1000);
