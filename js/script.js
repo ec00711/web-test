@@ -1,11 +1,17 @@
 // Set the date we're counting down to
 var countDownDate = new Date("July 1, 2025 19:57:00").getTime();
+var startTime = new Date("June 26, 2025 20:48:00").getTime();
 
 // Update the count down every 1 second
 var myInterval = setInterval(function() {
 
   // Get today's date and time
   var now = new Date().getTime();
+
+  if(now < startTime){
+    document.getElementById("clock").innerHTML = "Not yet...";
+    return;
+  }
 
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
